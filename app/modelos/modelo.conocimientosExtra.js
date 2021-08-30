@@ -10,3 +10,22 @@ module.exports.registrarConocimiento = async(datos)=>{
     }
 } 
 
+module.exports.eliminarConocimiento = async(idConocimiento)=>{
+    try {  
+        const resultado = await ConocimientosExtra.destroy({where:{id: idConocimiento}})  
+        return resultado;  
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+module.exports.actualizarConocimiento = async(datos)=>{
+    try {  
+        let array = [datos.conocimientoId, datos.nivel]
+        const resultado = await ConocimientosExtra.update({nivel: array[1]},{where:{id: array[0]}}) 
+        return resultado;  
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+

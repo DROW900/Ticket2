@@ -1,5 +1,6 @@
 const {DataTypes, Model} = require('sequelize');
-const sequelize = require('./db.conexion')
+const sequelize = require('./db.conexion');
+const Roles = require('./db.modelo.roles');
 
 class Usuarios extends Model{}
 
@@ -12,5 +13,6 @@ Usuarios.init({
     modelName: 'usuarios',
     timestamps: true
 });
-
+Usuarios.Roles = Usuarios.belongsTo(Roles)
+Roles.hasOne(Usuarios)
 module.exports = Usuarios

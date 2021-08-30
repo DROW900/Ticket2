@@ -11,4 +11,28 @@ module.exports = async(app)=>{
             res.status(500).json('Ocurrió un error con la consulta')
         }
     })
+
+    app.get('/login', async(req,res)=>{
+        try {
+            res.render('login')
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({mensaje: "Ocurrió un error al renderizar la página"})
+        }
+    })
+
+    app.post('/iniciarSesion', async(req,res)=>{
+        try {
+            const resultado = await controladorUsuarios.verificarUsuario(req.body);  
+            if(resultado != undefined){
+                const validacion = await controladorUsuarios.generaToken(resultado.id)
+                resultado.dataValues.token = validacion
+                res.status(200).json(resultado)
+            }
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({mensaje: "Ocurrió un error al iniciar sesión"})
+        }
+    })
+
 }

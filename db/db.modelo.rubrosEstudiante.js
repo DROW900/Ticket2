@@ -6,7 +6,7 @@ const Rubros = require('./db.modelo.rubros');
 class RubrosEstudiante extends Model{}
 
 RubrosEstudiante.init({
-    evaluacion:{type: DataTypes.FLOAT, allowNull:false}
+    evaluacion:{type: DataTypes.INTEGER, allowNull:false}
 },
 {
     sequelize,

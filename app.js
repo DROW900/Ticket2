@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config()
 const cors = require('cors')
-/* const midd = require('./middlewares/midd')  */
+const midd = require('./middlewares/midd') 
 const sequelize = require('./db/db.conexion');
 
 //Modelos de la Base de datos (sequelize)
@@ -14,16 +14,26 @@ const Estudiantes = require('./db/db.modelo.estudiantes')
 const Usuarios = require('./db/db.modelo.usuarios')
 const Idiomas = require('./db/db.modelo.idiomas')
 const ConocimientosExtra = require('./db/db.modelo.conocimientosExtra')
+const Trayectorias = require('./db/db.modelo.trayectorias')
+const Administradores = require('./db/db.modelo.administradores')
+const Opiniones = require('./db/db.modelo.opiniones')
+const Empresas = require('./db/db.modelo.empresas')
+const Anuncios = require('./db/db.modelo.anuncios')
 
 //Endpoints
 const vistaUsuarios = require('./app/vistas/vista.usuarios')
 const vistaConocimientosExtra = require('./app/vistas/vista.conocimientosExtra')
 const vistaIdiomas = require('./app/vistas/vista.idiomas')
+const vistaEstudiantes = require('./app/vistas/vista.estudiantes')
+const vistaTrayectorias = require('./app/vistas/vista.trayectorias')
+const vistaAdministradores = require('./app/vistas/vistas.administradores')
+const vistaOpiniones = require('./app/vistas/vista.opiniones')
+const vistaAnuncios = require('./app/vistas/vista.anuncios')
 
 //Middleware globales
 app.use(express.json())
 app.use(cors())
-/* app.use(midd.limiter) */
+app.use(midd.limiter)
 
 //Configuraciones globales
 app.use(express.static(__dirname + '/public'))
@@ -41,6 +51,11 @@ async function inicioServer(){
         await RubrosEstudiante.sync({alter: true})
         await Idiomas.sync({alter: true})
         await ConocimientosExtra.sync({alter: true})
+        await Trayectorias.sync({alter: true})
+        await Administradores.sync({alter: true})
+        await Opiniones.sync({alter: true})
+        await Empresas.sync({alter: true})
+        await Anuncios.sync({alter: true})
         await sequelize.authenticate()
         console.log('Se autenticó correctamente la DB')
         app.listen(process.env.PORT, function(){
@@ -55,3 +70,8 @@ inicioServer();
 vistaUsuarios(app)
 vistaConocimientosExtra(app)
 vistaIdiomas(app)
+vistaEstudiantes(app)
+vistaTrayectorias(app)
+vistaAdministradores(app)
+vistaOpiniones(app)
+vistaAnuncios(app)

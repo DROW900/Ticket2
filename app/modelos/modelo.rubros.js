@@ -21,3 +21,14 @@ module.exports.obtenerEvaluacionesAlumno = async(idAlumno)=>{
     }
 }
 
+module.exports.registrarEvaluaciones = async(idEstudiante, datos)=>{
+    try {
+        for(let i = 0; i < datos.length; i++){
+            let resultado = await RubrosEstudiante.create({evaluacion: datos[i].evaluacion ,rubroId: datos[i].idRubro, estudianteId: idEstudiante})
+        }
+        return 1;
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+

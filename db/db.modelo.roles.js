@@ -11,4 +11,5 @@ Roles.init({
     modelName: 'roles',
     timestaps: true
 });
+
 module.exports = Roles;

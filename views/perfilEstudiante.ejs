@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+</head>
+<body onload="Estudiante.obtenerInformacionEstudiante()">
+    <div class="contenedor">
+        <header class="header">
+            <div>
+                <img src="assets/images/redes.png" alt="Logotipo"><strong>TeclaBook</strong>
+            </div>
+        </header>
+        <aside class="sidebar">
+            <div class="foto-nombre">
+                <p>Foto</p>
+                <p id="nombrePerfil">Nombre</p>
+            </div>
+            <div class="botones">
+                <button onclick="Estudiante.obtenerInformacionEstudiante()">Información general</button></br>
+                <button onclick="Estudiante.obtenerEvaluaciones()">Habilidades</button></br>
+                <button>Trayectoria Académica</button></br>
+                <button>Opiniones</button></br>
+            </div>
+        </aside>
+        <main id="informacion" class="contenido">
+            <h2>Contenido</h2>    
+        </main>
+        <aside class="publicidad">
+            <div>
+                <h2>Publicidad</h2>
+            </div>
+            <div>
+                <h2>Anuncios</h2>
+            </div>
+        </aside>
+    </div>
+    <script src="assets/js/usuarios.js"></script>
+    <script src="assets/js/estudiantes.js"></script>
+</body>
+</html>
