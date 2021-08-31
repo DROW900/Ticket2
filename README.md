@@ -1,4 +1,4 @@
-Finalidad del proyecto Este proyecto tiene el enfoque de presentar una funcionalidad de API, para ello permite realizar una serie de consultas tales como las categorias, subcategorias y productos apoyandonos de la API de Mercado Libre.
+Finalidad del proyecto Este proyecto tiene el enfoque de presentar una funcionalidad de API, para ello permite realizar una serie de consultas, registros y actualización de diversos módulos planteados para la construcción de una red social.
 
 La documentación de funcionalidad se puede comprender mejor dentro del siguiente enlace: https://app.swaggerhub.com/apis-docs/DROW900/Ticket2/1.0.0
 
@@ -10,7 +10,7 @@ Para poder trabajar con este proyecto se utilizará el manejador de paquetes npm
 
 Una vez instalados los recursos necesarios se pueden realizar las consultas por medio de la URL del servidor y los ejemplos de la documentación mostrada anteriormente
 
-Para MSSQL es necesario generar una base de datos y configurarla en un archivo .ENV, generando las variables DB_USER, DB_PASS, DB_NAME, DB_PORT y DB_HOST. El nombre de la base de datos para su manejo es "ticket1"
+Para MSSQL es necesario generar una base de datos y configurarla en un archivo .ENV, generando las variables DB_USER, DB_PASS, DB_NAME, DB_PORT y DB_HOST. El nombre de la base de datos para su manejo es "ticket2"
 
 Es necesario definir el HOST y puerto con el que funcionará el servidor, además de una SECRET_KEY que nos permitirá firmar correctamente el token generado con JWT. Estas variables se definen en el mismo .env
 
