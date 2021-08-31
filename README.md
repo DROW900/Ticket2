@@ -1,6 +1,6 @@
 Finalidad del proyecto Este proyecto tiene el enfoque de presentar una funcionalidad de API, para ello permite realizar una serie de consultas tales como las categorias, subcategorias y productos apoyandonos de la API de Mercado Libre.
 
-La documentación de funcionalidad se puede comprender mejor dentro del siguiente enlace: https://app.swaggerhub.com/apis-docs/DROW900/Api-ticket1/1.0.0
+La documentación de funcionalidad se puede comprender mejor dentro del siguiente enlace: https://app.swaggerhub.com/apis-docs/DROW900/Ticket2/1.0.0
 
 Versiones de software: -NodeJS v14.17.1 -npm v6.14.13 "cors": "^2.8.5", "dotenv": "^10.0.0", "express": "^4.17.1", "express-rate-limit": "^5.3.0", "node-fetch": "^2.6.1", nodemon": "^2.0.12", "sequelize": "^6.6.5", "tedious": "^11.4.0", "jsonwebtoken": 8.5.1, "ejs": 3.1.6, "joi": 17.4.2
 
